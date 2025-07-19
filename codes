@@ -1,0 +1,142 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int size;
+    cout<<"Enter the size of array:";
+    cin>>size;
+    int marks[size];
+    for(int i=0;i<size;i++){
+        cin>>marks[i];
+    }
+    for(int i=0;i<size;i++){
+        cout<<marks[i]<<endl;
+    }
+
+//->minimum num of a array
+
+   int marks[5]={99, 43, 23, 76, 89};
+   int smallest=marks[0]; //me smallest koisa bhi maan sakta hu apne mann se jaise maine marks[0] yani 99 ko mana
+   for(int i=0;i<5;i++){
+       if(marks[i]<smallest){
+         smallest=marks[i];
+       }
+   }
+   cout<<"The smallest element is:"<<smallest;
+
+//->largest num of array
+
+  int marks[5]={99,43,23,76,89};
+  int largest=marks[3];
+  for(int i=0;i<5;i++){
+    if(marks[i]>largest){
+        largest=marks[i];
+    }
+  }
+  cout<<"The largest element is:"<<largest;
+
+
+//->location find of largest and smallest element of array
+
+int marks[5]={45, 65, 78, 90, 29};
+int loc;
+int largest=marks[2];
+for(int i=0;i<5;i++){
+    if(marks[i]>largest){
+        largest=marks[i];
+        loc=i;      
+    }
+}
+cout<<"The largest element of this array is:"<<largest<<endl;
+cout<<"The location(index) is:"<<loc;
+
+// ->element searchin in an array
+
+int marks[5]={3, 4, 5, 7, 8};
+int loc=-1,n;
+cout<<"Enter the searching element:";
+cin>>n;
+for(int i=0;i<5;i++){
+    if(marks[i]==n){
+        loc=i;
+        cout<<"Given element present in array"<<endl;
+        break;
+    }
+}
+if(loc!=-1){
+    cout<<"The element at the location:"<<loc;
+}
+else{
+    cout<<"Given element not found in array";
+}
+
+//->reverse of an array
+
+int size;
+     cout<<"Enter the size of array:";
+     cin>>size;
+     int marks[size];
+     for(int i=0;i<size;i++){
+         cin>>marks[i];
+     }
+     for(int i=size-1;i>=0;i--){
+         cout<<marks[i]<<endl;
+     }
+
+// ->sum and product of array element
+
+int marks[5]={2,3,4,5,7};
+int sum=0;
+int product=1;
+for(int i=0;i<5;i++){
+    sum=sum+marks[i];
+    product=product*marks[i];
+}
+cout<<"sum:"<<sum<<endl;
+cout<<"product:"<<product;
+
+// ->all unique character
+
+char arr[7]={1,3,'#',7,'$',9,'&'};
+for(int i=0;i<7;i++){
+    if((arr[i]>0 || arr[i]<9) && (arr[i]>'A' || arr[i]<'Z') && (arr[i]>'a' || arr[i]<'z')){
+        cout<<arr[i]<<endl;
+    }
+}
+
+// -> intersection of two array
+
+int arr1[5]={2,4,7,9,5};
+int arr2[5]={4,6,2,9,1};
+for(int i=0;i<5;i++){
+    for(int j=0;j<5;j++){
+if(arr1[i]==arr2[j]){
+        cout<<arr1[i]<<endl;
+    }
+    }
+}
+
+// -> swap the max and min in array
+
+int arr[5]={2,4,6,3,7};
+int largest=arr[0];
+int smallest=arr[1];
+int t;
+for(int i=0;i<5;i++){
+    if(arr[i]>largest){
+    largest=arr[i];}
+    if(arr[i]<smallest){
+        smallest=arr[i];
+    }
+}
+cout<<"Values before swapping:";
+cout<<smallest<<",";
+cout<<largest<<endl;
+    t=largest;
+    largest=smallest;
+    smallest=t;
+cout<<"Values after swapping:";
+cout<<smallest<<",";
+cout<<largest;
+   return 0;
+}
